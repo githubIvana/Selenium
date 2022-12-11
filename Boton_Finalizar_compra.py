@@ -4,7 +4,9 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys 
 import time
 
-driver = webdriver.Chrome()
+options = webdriver.ChromeOptions()
+options.add_experimental_option('excludeSwitches', ['enable-logging'])
+driver = webdriver.Chrome(options=options)
 driver.delete_all_cookies()
 driver.maximize_window()
 driver.get("https://tienda.centroestant.com.ar/")

@@ -3,8 +3,10 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys 
 import time
+options = webdriver.ChromeOptions()
+options.add_experimental_option('excludeSwitches', ['enable-logging'])
 
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(options=options)
 driver.delete_all_cookies()  #esto es para borrar todas las cookies
 driver.maximize_window()  #para ampliar el tamano de la ventana completa.
 
